@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Search from './Search';
 import Hackathon from './Hackathon';
 
 class MLHSearch extends Component {
@@ -7,11 +8,11 @@ class MLHSearch extends Component {
         this.state = {
             hackathons: [],
             filteredHackathons: [],
-            loading: false
+            loading: false,
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.setState({ loading: true });
         fetch("https://mlh-events.now.sh/na-2019")
         .then(response => response.json())
@@ -22,15 +23,28 @@ class MLHSearch extends Component {
         }));
     }
 
+    handleFilter = (param) => {
+        let newList = this.state.hackathons;
+        newList = newList.filter(function(item) {
+            if (item.name.toLowerCase().includes(param.toLowerCase())) {
+                return item
+            }
+        })
+        this.setState({
+            filteredHackathons: newList
+        })
+    }
+
     render() {
         if (this.state.loading) {
             return <p>loading</p>;
         }
         return (
-            <div className="App">
+            <div>
+                <Search handleFilter={this.handleFilter}/>
                 {
-                  this.state.hackathons.map(data =>
-                    <Hackathon data={data} key={data.name}/>
+                  this.state.filteredHackathons.map(data =>
+                    <Hackathon data={data} key={data.imageUrl}/>
                   )
                 }
             </div>
@@ -39,11 +53,3 @@ class MLHSearch extends Component {
 }
 
 export default MLHSearch;
-
-/*
-{
-    this.state.filtered.map(info => 
-        <p>{info.name}</p>
-    )
-}
-*/
