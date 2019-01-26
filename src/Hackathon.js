@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const Hackathon = (props) => {
     return (
-        <div>{props.data.name}</div>
+        <div>
+            {props.data.name}
+        </div>
     )
 }
 

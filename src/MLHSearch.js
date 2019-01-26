@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Search from './Search';
+import Input from './Input';
 import Hackathon from './Hackathon';
+import './scss/styles.scss';
 
 class MLHSearch extends Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class MLHSearch extends Component {
 
     componentDidMount() {
         this.setState({ loading: true });
-        fetch("https://mlh-events.now.sh/na-2019")
+        fetch("https://mlh-events.now.sh/na-2018")
         .then(response => response.json())
         .then(hackathons => this.setState({ 
             hackathons: hackathons,
@@ -23,10 +24,13 @@ class MLHSearch extends Component {
         }));
     }
 
-    handleFilter = (param) => {
+    filterText = (param) => {
         let newList = this.state.hackathons;
         newList = newList.filter(function(item) {
-            if (item.name.toLowerCase().includes(param.toLowerCase())) {
+            if (item.name.toLowerCase().includes(param.toLowerCase())
+            || item.location.toLowerCase().includes(
+                param.split(' ').join('').toLowerCase())) 
+            {
                 return item
             }
         })
@@ -35,13 +39,20 @@ class MLHSearch extends Component {
         })
     }
 
+    filterDate = (param) => {
+        console.log(param)
+    }
+
     render() {
+        const placeholder = "Name, location, or state code"
         if (this.state.loading) {
             return <p>loading</p>;
         }
         return (
             <div>
-                <Search handleFilter={this.handleFilter}/>
+                <Input filterText={this.filterText} 
+                    placeholder={placeholder}
+                />
                 {
                   this.state.filteredHackathons.map(data =>
                     <Hackathon data={data} key={data.imageUrl}/>
