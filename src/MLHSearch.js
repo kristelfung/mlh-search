@@ -49,15 +49,17 @@ class MLHSearch extends Component {
             return <p>loading</p>;
         }
         return (
-            <div>
+            <div className="container">
                 <Input filterText={this.filterText} 
                     placeholder={placeholder}
                 />
-                {
-                  this.state.filteredHackathons.map(data =>
-                    <Hackathon data={data} key={data.imageUrl}/>
-                  )
-                }
+                <div class="row">
+                    {
+                    this.state.filteredHackathons.map(data =>
+                        <Hackathon data={data} key={data.imageUrl}/>
+                    )
+                    }
+                </div>
             </div>
         );
     }

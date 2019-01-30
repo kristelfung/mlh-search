@@ -1,0 +1,22 @@
+.card {
+    text-align: center;
+    flex: 25%;
+}
+
+@media screen and (max-width: $medium-screen) {
+    .card {
+        flex: calc(100%/3);
+    }
+}
+
+@media screen and (max-width: $small-screen) {
+    .card {
+        flex: 50%;
+    }
+}
+
+@media screen and (max-width: $mobile-screen) {
+    .card {
+        flex: 100%;
+    }
+}

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hackathon = (props) => {
     return (
-        <div>
+        <div class="card">
             {props.data.name}
         </div>
     )
