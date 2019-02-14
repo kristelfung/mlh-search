@@ -2,8 +2,9 @@ import React from 'react';
 
 const Hackathon = (props) => {
     return (
-        <div class="card">
-            {props.data.name}
+        <div class="hackathon">
+            <img src={props.data.imageUrl} className="hackathon__image"/>
+            <p>{props.data.name}</p>
         </div>
     )
 }

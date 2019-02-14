@@ -1,22 +1,30 @@
-.card {
+.hackathon {
     text-align: center;
-    flex: 25%;
+    width: 25%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.hackathon__image {
+    width: 100%;
 }
 
 @media screen and (max-width: $medium-screen) {
-    .card {
+    .hackathon {
         flex: calc(100%/3);
     }
 }
 
 @media screen and (max-width: $small-screen) {
-    .card {
+    .hackathon {
         flex: 50%;
     }
 }
 
 @media screen and (max-width: $mobile-screen) {
-    .card {
+    .hackathon {
         flex: 100%;
     }
 }
