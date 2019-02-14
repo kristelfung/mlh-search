@@ -1,3 +1,12 @@
+@font-face {
+    
+}
+
+body {
+    background-color: $dark-blue;
+    color: $text-white;
+}
+
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -6,5 +15,5 @@
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin: -10px;
+    margin: -15px;
 }
