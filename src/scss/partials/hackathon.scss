@@ -18,6 +18,11 @@
     border-top-right-radius: 10px;
 }
 
+.hackathon__text {
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
 @media screen and (max-width: $medium-screen) {
     .hackathon {
         flex: calc(100%/3);
