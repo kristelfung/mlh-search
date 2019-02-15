@@ -7,6 +7,11 @@
     box-sizing: border-box;
 }
 
+.hackathon__background {
+    background-color: $light-blue;
+    border-radius: 10px;
+}
+
 .hackathon__image {
     width: 100%;
     border-top-left-radius: 10px;
