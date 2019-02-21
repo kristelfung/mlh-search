@@ -53,7 +53,7 @@ class MLHSearch extends Component {
                 <Input filterText={this.filterText} 
                     placeholder={placeholder}
                 />
-                <div class="row">
+                <div className="row">
                     {
                     this.state.filteredHackathons.map(data =>
                         <Hackathon data={data} key={data.imageUrl}/>

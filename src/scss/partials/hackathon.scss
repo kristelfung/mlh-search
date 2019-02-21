@@ -19,24 +19,34 @@
 }
 
 .hackathon__text {
-    padding-top: 15px;
-    padding-bottom: 25px;
+    padding: 15px 15px 25px 10px; // top right bottom left
+
+    h2 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.hackathon__date {
+    margin-bottom: 5px;
+    opacity: 0.7;
 }
 
 @media screen and (max-width: $medium-screen) {
     .hackathon {
-        flex: calc(100%/3);
+        width: calc(100%/3);
     }
 }
 
 @media screen and (max-width: $small-screen) {
     .hackathon {
-        flex: 50%;
+        width: 50%;
     }
 }
 
 @media screen and (max-width: $mobile-screen) {
     .hackathon {
-        flex: 100%;
+        width: 100%;
     }
 }
