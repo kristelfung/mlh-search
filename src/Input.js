@@ -5,7 +5,7 @@ const Input = (props) => {
     return (
         <div>
             <form className="search">
-                <img src={searchIcon} className="icon"/>
+                <img src={searchIcon} className="icon" alt="Search icon"/>
                 <input type="text" 
                     placeholder={props.placeholder} 
                     onChange={(e) => props.filterText(e.target.value)}

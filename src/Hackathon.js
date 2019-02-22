@@ -26,7 +26,10 @@ const Hackathon = (props) => {
         <div className="hackathon">
             <a href={props.data.url} className="hackathon__link">
                 <div className="hackathon__background">
-                    <img src={props.data.imageUrl} className="hackathon__image"/>
+                    <img src={props.data.imageUrl} 
+                        className="hackathon__image"
+                        alt={props.data.name}
+                    />
                     <div className="hackathon__text">
                         <h2>{props.data.name}</h2>
                         <p className="hackathon__date">

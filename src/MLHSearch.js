@@ -39,10 +39,6 @@ class MLHSearch extends Component {
         })
     }
 
-    filterDate = (param) => {
-        console.log(param)
-    }
-
     render() {
         const placeholder = "Search name, location, or state code"
         if (this.state.loading) {
