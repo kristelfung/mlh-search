@@ -25,6 +25,7 @@
 
 .hackathon__image {
     width: 100%;
+    height: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -59,5 +60,23 @@
 @media screen and (max-width: $mobile-screen) {
     .hackathon {
         width: 100%;
+        padding: 7.5px 15px;
+    }
+
+    .hackathon__background {
+        display: flex;
+        align-items: center;
+    }
+
+    .hackathon__image {
+        width: 30%;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .hackathon__text {
+        width: 70%;
+        padding: 0px 30px;
+        text-align: left;
     }
 }
