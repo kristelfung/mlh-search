@@ -15,7 +15,6 @@
 }
 
 body {
-    font-family: 'Source Sans Pro';
     background-color: $dark-blue;
     color: $text-white;
     margin: 0;
@@ -28,6 +27,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Source Sans Pro Bold';
+}
+
+p, a {
+    font-family: 'Source Sans Pro';
 }
 
 .container {
