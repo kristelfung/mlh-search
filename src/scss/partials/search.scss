@@ -1,4 +1,6 @@
 .search {
+    position: relative;
+
     input[type=text] {
         width: 100%;
         box-sizing: border-box;
@@ -9,12 +11,21 @@
         color: $text-white;
         background: $light-blue;
         font-size: 16px;
+        text-indent: 30px;
     }
     input:focus {
         outline-width: 0;
     }
     input::placeholder {
-        color: $text-white;
+        color: white;
+        opacity: 0.4;
         font-family: 'Source Sans Pro';
     }
+}
+
+.icon {
+    width: 18px;
+    position: absolute;
+    top: 40px;
+    left: 20px;
 }
