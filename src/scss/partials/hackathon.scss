@@ -66,6 +66,8 @@
     .hackathon__background {
         display: flex;
         align-items: center;
+        padding-right: 30px; // need this due to overflow
+        // otherwise it would be on hackathon__text
     }
 
     .hackathon__image {
@@ -76,7 +78,7 @@
 
     .hackathon__text {
         width: 70%;
-        padding: 0px 30px;
+        padding: 0px 0px 0px 20px;
         text-align: left;
     }
 }
