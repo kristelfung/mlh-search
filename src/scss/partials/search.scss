@@ -2,7 +2,19 @@
     input[type=text] {
         width: 100%;
         box-sizing: border-box;
-        padding: 15px;
-        margin: 15px 0px;
+        padding: 20px;
+        margin: 20px 0px;
+        border: 0;
+        border-radius: 10px;
+        color: $text-white;
+        background: $light-blue;
+        font-size: 16px;
+    }
+    input:focus {
+        outline-width: 0;
+    }
+    input::placeholder {
+        color: $text-white;
+        font-family: 'Source Sans Pro';
     }
 }
