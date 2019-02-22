@@ -5,6 +5,12 @@
     flex-shrink: 0;
     padding: 15px;
     box-sizing: border-box;
+    cursor: pointer;
+    transition: padding .1s linear;
+}
+
+.hackathon:hover {
+    padding: 10px;
 }
 
 .hackathon__background {
