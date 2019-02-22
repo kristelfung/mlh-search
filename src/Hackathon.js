@@ -1,10 +1,27 @@
 import React from 'react';
 
-const convertDate = (date) => {
-    return 1;
+// changes date from 2018-02-13 form to "Feb 13"
+const handleDate = (startDate, endDate, months) => {
+    const startMonth = months[startDate.slice(5, 7)-1];
+    const startDay = parseInt(startDate.slice(8, 11));
+    const endMonth = months[endDate.slice(5, 7)-1];
+    const endDay = parseInt(endDate.slice(8, 11));
+    if (startDay === endDay) { // in case of one day hackathon
+        return startMonth + " " + startDay;
+    }
+    return startMonth + " " + startDay + " - " 
+                        + endMonth + " " + endDay;
+}
+
+const handleLocation = (location) => {
+    location = location.replace(/([a-z])([A-Z])/g, '$1 $2');
+    location = location.replace(/,/g, ', ');
+    return location;
 }
 
 const Hackathon = (props) => {
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     return (
         <div className="hackathon">
             <a href={props.data.url} className="hackathon__link">
@@ -13,9 +30,12 @@ const Hackathon = (props) => {
                     <div className="hackathon__text">
                         <h2>{props.data.name}</h2>
                         <p className="hackathon__date">
-                            {convertDate(props.data.startDate)}
+                            {handleDate(props.data.startDate, 
+                                            props.data.endDate, months)}
                         </p>
-                        <p>{props.data.location}</p>
+                        <p>
+                            {handleLocation(props.data.location)}
+                        </p>
                     </div>
                 </div>
             </a>
