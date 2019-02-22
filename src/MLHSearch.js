@@ -46,7 +46,15 @@ class MLHSearch extends Component {
     render() {
         const placeholder = "Search name, location, or state code"
         if (this.state.loading) {
-            return <p>loading</p>;
+        return (
+            <div class="loading">
+                <div class="lds-facebook">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        );
         }
         return (
             <div className="container">
