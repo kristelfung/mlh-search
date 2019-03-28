@@ -8,7 +8,7 @@ const handleDate = (startDate, endDate, months) => {
     const endDay = parseInt(endDate.slice(8, 11));
     const year = parseInt(startDate.slice(0, 4));
     if (startDay === endDay) { // in case of one day hackathon
-        return startMonth + " " + startDay;
+        return startMonth + " " + startDay + ", " + year;
     }
     return startMonth + " " + startDay + " - " 
                         + endMonth + " " + endDay + ", " + year;
