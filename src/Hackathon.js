@@ -2,15 +2,16 @@ import React from 'react';
 
 // changes date from 2018-02-13 form to "Feb 13"
 const handleDate = (startDate, endDate, months) => {
-    const startMonth = months[startDate.slice(5, 7)-1];
+    const startMonth = months[startDate.slice(5, 7)-1]; // goes into months array
     const startDay = parseInt(startDate.slice(8, 11));
     const endMonth = months[endDate.slice(5, 7)-1];
     const endDay = parseInt(endDate.slice(8, 11));
+    const year = parseInt(startDate.slice(0, 4));
     if (startDay === endDay) { // in case of one day hackathon
         return startMonth + " " + startDay;
     }
     return startMonth + " " + startDay + " - " 
-                        + endMonth + " " + endDay;
+                        + endMonth + " " + endDay + ", " + year;
 }
 
 const handleLocation = (location) => {
